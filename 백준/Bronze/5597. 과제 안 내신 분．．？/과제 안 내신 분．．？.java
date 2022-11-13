@@ -5,7 +5,7 @@ public class Main{
     Scanner sc = new Scanner(System.in);
     int arr[] = new int[31];
 
-    int cnt = 0;
+    //int cnt = 0;
 
     for(int i = 1; i<=28; i++){
       int n = sc.nextInt();
