@@ -5,15 +5,13 @@ class Main{
 		Scanner sc = new Scanner(System.in);
 
 		int a = sc.nextInt();  // 입력받은 수
-		int b = sc.nextInt(); //  n진수
+		int b = sc.nextInt();  // n진수
+		Stack st= new Stack(); // 나머지를 역순으로 출력하기 위해 스택 사용 
 		
-		Stack st= new Stack();
-        if(a == 0) System.out.println(0);
-		//나머지값을 스택에 저장 후 나머지값을 스택에서 꺼내어 출력
-		while(a != 0){
+		do{ // 몫이 0이 될때까지 반복
 			int tmp = a%b;
-			if(tmp < 10) // 나머지가 10보다 작으면 
-				st.push(tmp); // 스택에 나머지값 저장
+			if(tmp < 10) 		// 나머지가 10보다 작으면 
+				st.push(tmp);   // 스택에 나머지값 저장
 			else{			// 나머지가 10보다 큰 경우 변환시킴
 				switch(tmp){
 					case 10:
@@ -37,7 +35,7 @@ class Main{
 				}
 			}	
 			a /= b; // 계속 나눠줌
-		}
+		}while(a != 0);
 		while(!st.isEmpty()){
 			System.out.print(st.pop());			// 스택의 내용물을 전부 꺼냄
 		}
