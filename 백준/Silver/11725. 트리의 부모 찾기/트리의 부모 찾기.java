@@ -42,7 +42,7 @@ class Main{
         for(int i =2; i<=N; i++){ // 2번노드부터 부모노드 순서대로 출력함
             System.out.println(parent[i]);
         }
-
+        br.close();
     }
 
 }
