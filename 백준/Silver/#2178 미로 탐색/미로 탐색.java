@@ -2,22 +2,23 @@ import java.util.*;
 import java.io.*;
 
 class Main{
-    static int[] dx = {0,1,0,-1};
+    static int[] dx = {0,1,0,-1}; // 상하좌우 탐색을 위한 변수
     static int[] dy = {1,0,-1,0};
-    static boolean[][] visited;
-    static int[][] A;
-    static int N, M;
+    static boolean[][] visited; //  방문 여부
+    static int[][] A; 
+    static int N, M; // 행 과 열
+    
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        A = new int[N][M];
+        A = new int[N][M]; // 배열 초기화
         visited = new boolean[N][M]; // 방문 기록 저장 배열
 
         for(int i =0; i<N; i++){
             st = new StringTokenizer(br.readLine());
-            String line = st.nextToken(); // 미로생성
+            String line = st.nextToken(); // 미로 생성
             for(int j =0; j<M; j++){
                 A[i][j] = Integer.parseInt(line.substring(j, j+1)); // 입력받은 문자열을 잘라서 배열에 저장함
             }
