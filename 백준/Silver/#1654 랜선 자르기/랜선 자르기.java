@@ -20,12 +20,12 @@ class Main{
 
 	}
 
-	public static void binarySearch(int[] arr, int N){
+	public static void binarySearch(int[] arr, int N){ // Upper bound 이분탐색
 		long low = 0; // 최소 길이
 		long high = arr[arr.length -1]; // 최대 길이
 		long mid = 0;
         
-        high++;
+        	high++; // 자연수 탐색범위를 증가시켜 mid값이 0이되는것을 방지함. 
 		while(low < high){
 			mid = (low + high) / 2; // 중간 길이
 			long cnt = 0; // 개수를 담을 변수
@@ -40,6 +40,6 @@ class Main{
 				low = mid + 1;
 
 		}
-		System.out.println(low-1);
+		System.out.println(low-1); // 상한값(특정값을 초과하는 최초의 값) -1 이 가능한 최대 길이임. 
 	}
 }
